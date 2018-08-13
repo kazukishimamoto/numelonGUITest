@@ -8,12 +8,11 @@
 
 import UIKit
 
-class NumeronKeyboardViewController: UIViewController {
+class NumeronKeyboardViewController: UIViewController, AbstructKeyboard {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +20,38 @@ class NumeronKeyboardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    var keyboardView: UIView = UIView()
+    
+    func getView() -> UIView{
+        /* 以下の行を追加する */
+        let view1 = UIView(frame: CGRect(x: 0, y: self.view.frame.height / 3 * 2, width: self.view.frame.width, height: self.view.frame.height / 3))
+        view1.backgroundColor = .lightGray
+        
+        return view1
     }
-    */
+    
+    public weak var kernel: NumeronKernel? = nil
+    
+    public func tapped(point: CGPoint) {
+        guard let len = readLine() else {
+            return
+        }
+        guard let num = Int(len) else {
+            return
+        }
+        let inputtedAns = cnvAnsType(num)
+        setAns(ans: inputtedAns)
+    }
+    
+    private func cnvAnsType(_ num: Int) -> [String] {
+        var n = num
+        var result = [String]()
+        while n > 0 {
+            let s = String(n%10)
+            result.insert(s, at: 0)
+            n /= 10
+        }
+        return result
+    }
 
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D427F9CC2121289F00F3C712 /* NumeronKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427F9CB2121289F00F3C712 /* NumeronKeyboardViewController.swift */; };
+		D427F9CE2121318100F3C712 /* testButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D427F9CD2121318100F3C712 /* testButton.xib */; };
 		D440E12D212122E6002EDA55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D440E12C212122E6002EDA55 /* AppDelegate.swift */; };
 		D440E12F212122E6002EDA55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D440E12E212122E6002EDA55 /* ViewController.swift */; };
 		D440E132212122E6002EDA55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D440E130212122E6002EDA55 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		D427F9CB2121289F00F3C712 /* NumeronKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumeronKeyboardViewController.swift; sourceTree = "<group>"; };
+		D427F9CD2121318100F3C712 /* testButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testButton.xib; sourceTree = "<group>"; };
 		D440E129212122E6002EDA55 /* NumelonGUItest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumelonGUItest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D440E12C212122E6002EDA55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D440E12E212122E6002EDA55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				D440E135212122EA002EDA55 /* LaunchScreen.storyboard */,
 				D440E138212122EA002EDA55 /* Info.plist */,
 				D427F9CB2121289F00F3C712 /* NumeronKeyboardViewController.swift */,
+				D427F9CD2121318100F3C712 /* testButton.xib */,
 			);
 			path = NumelonGUItest;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 				D440E137212122EA002EDA55 /* LaunchScreen.storyboard in Resources */,
 				D440E134212122EA002EDA55 /* Assets.xcassets in Resources */,
 				D440E132212122E6002EDA55 /* Main.storyboard in Resources */,
+				D427F9CE2121318100F3C712 /* testButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
