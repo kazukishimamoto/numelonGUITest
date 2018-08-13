@@ -33,14 +33,6 @@ class NumeronKeyboardViewController: UIViewController, AbstructKeyboard {
     public weak var kernel: NumeronKernel? = nil
     
     public func tapped(point: CGPoint) {
-        guard let len = readLine() else {
-            return
-        }
-        guard let num = Int(len) else {
-            return
-        }
-        let inputtedAns = cnvAnsType(num)
-        setAns(ans: inputtedAns)
     }
     
     private func cnvAnsType(_ num: Int) -> [String] {

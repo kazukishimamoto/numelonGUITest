@@ -17,6 +17,9 @@ class ViewController: UIViewController {
         
         let view = nk.getView()
         self.view.addSubview(view)
+        
+        let button = testButton(frame: CGRect(x: 0.0, y: 0.0, width: 300, height: 400))
+        self.view.addSubview(button)
     }
 
     override func didReceiveMemoryWarning() {
