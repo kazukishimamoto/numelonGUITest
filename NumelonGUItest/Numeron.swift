@@ -19,30 +19,33 @@ public enum NumeronType {
     case DigitOnly
 }
 
-public protocol AbstructDisplay: class {
+public protocol AbstractDisplay: class {
     var kernel: NumeronKernel? { get set }
     func display(msg: String)
+    func getView() -> UIView
 }
 
-public protocol AbstructKeyboard: class {
+public protocol AbstractKeyboard: class {
     var kernel: NumeronKernel? { get set }
-    func tapped(point: CGPoint)
+    init(frame: CGRect)
+    func getView() -> UIView
+    // func tapped(point: CGPoint)
 }
 
-public extension AbstructKeyboard {
+public extension AbstractKeyboard {
     public func setAns(ans: [String]) {
         kernel!.inputtedAns = [String](ans[0..<kernel!.level.digit])
     }
 }
 
 public protocol NumeronFactory: class {
-    func makeDisplay(level: Level) -> AbstructDisplay
-    func makeKeyboard(level: Level) -> AbstructKeyboard
+    func makeDisplay(level: Level, frame: CGRect) -> AbstractDisplay
+    func makeKeyboard(level: Level, frame: CGRect) -> AbstractKeyboard
 }
 
 public final class NumeronKernel {
-    private weak var display: AbstructDisplay?
-    private weak var keyboard: AbstructKeyboard?
+    private weak var display: AbstractDisplay?
+    private weak var keyboard: AbstractKeyboard?
     public let level: Level
     private var answer = [String]()
     private var eat = 0, bite = 0
@@ -71,7 +74,7 @@ public final class NumeronKernel {
     }
     
 
-    init(level: Level, display: AbstructDisplay, keyboard: AbstructKeyboard) {
+    init(level: Level, display: AbstractDisplay, keyboard: AbstractKeyboard) {
         // init answer
         let count = 1_000_000 // shuffle counts
         switch level.type {
