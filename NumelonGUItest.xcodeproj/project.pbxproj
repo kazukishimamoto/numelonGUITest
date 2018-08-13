@@ -17,6 +17,11 @@
 		D440E137212122EA002EDA55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D440E135212122EA002EDA55 /* LaunchScreen.storyboard */; };
 		D440E13F212124F4002EDA55 /* Numeron.swift in Sources */ = {isa = PBXBuildFile; fileRef = D440E13E212124F4002EDA55 /* Numeron.swift */; };
 		D440E14121212581002EDA55 /* NumeronError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D440E14021212580002EDA55 /* NumeronError.swift */; };
+		D4DEB8992121DB4400A76BF9 /* KeyboardGUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DEB8982121DB4400A76BF9 /* KeyboardGUI.xib */; };
+		D4DEB89B2121DC4700A76BF9 /* KeyboardGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DEB89A2121DC4700A76BF9 /* KeyboardGUI.swift */; };
+		D4DEB89D2121EB5300A76BF9 /* GUIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DEB89C2121EB5300A76BF9 /* GUIFactory.swift */; };
+		D4DEB89F2121ECEA00A76BF9 /* UIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DEB89E2121ECEA00A76BF9 /* UIDesign.swift */; };
+		D4DEB8A12121EEB200A76BF9 /* TestDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DEB8A02121EEB200A76BF9 /* TestDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		D440E138212122EA002EDA55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D440E13E212124F4002EDA55 /* Numeron.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numeron.swift; sourceTree = "<group>"; };
 		D440E14021212580002EDA55 /* NumeronError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumeronError.swift; sourceTree = "<group>"; };
+		D4DEB8982121DB4400A76BF9 /* KeyboardGUI.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardGUI.xib; sourceTree = "<group>"; };
+		D4DEB89A2121DC4700A76BF9 /* KeyboardGUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGUI.swift; sourceTree = "<group>"; };
+		D4DEB89C2121EB5300A76BF9 /* GUIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GUIFactory.swift; sourceTree = "<group>"; };
+		D4DEB89E2121ECEA00A76BF9 /* UIDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDesign.swift; sourceTree = "<group>"; };
+		D4DEB8A02121EEB200A76BF9 /* TestDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDisplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +83,11 @@
 		D440E12B212122E6002EDA55 /* NumelonGUItest */ = {
 			isa = PBXGroup;
 			children = (
+				D4DEB8972121DAE200A76BF9 /* KeyboardGUI */,
 				D427F9D12121352E00F3C712 /* testKeyborad */,
 				D440E12C212122E6002EDA55 /* AppDelegate.swift */,
+				D4DEB8A02121EEB200A76BF9 /* TestDisplay.swift */,
+				D4DEB89C2121EB5300A76BF9 /* GUIFactory.swift */,
 				D440E12E212122E6002EDA55 /* ViewController.swift */,
 				D440E13E212124F4002EDA55 /* Numeron.swift */,
 				D440E14021212580002EDA55 /* NumeronError.swift */,
@@ -83,8 +96,18 @@
 				D440E135212122EA002EDA55 /* LaunchScreen.storyboard */,
 				D440E138212122EA002EDA55 /* Info.plist */,
 				D427F9CB2121289F00F3C712 /* NumeronKeyboardViewController.swift */,
+				D4DEB89E2121ECEA00A76BF9 /* UIDesign.swift */,
 			);
 			path = NumelonGUItest;
+			sourceTree = "<group>";
+		};
+		D4DEB8972121DAE200A76BF9 /* KeyboardGUI */ = {
+			isa = PBXGroup;
+			children = (
+				D4DEB8982121DB4400A76BF9 /* KeyboardGUI.xib */,
+				D4DEB89A2121DC4700A76BF9 /* KeyboardGUI.swift */,
+			);
+			path = KeyboardGUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +172,7 @@
 				D440E134212122EA002EDA55 /* Assets.xcassets in Resources */,
 				D440E132212122E6002EDA55 /* Main.storyboard in Resources */,
 				D427F9CE2121318100F3C712 /* testButton.xib in Resources */,
+				D4DEB8992121DB4400A76BF9 /* KeyboardGUI.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,12 +183,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4DEB89D2121EB5300A76BF9 /* GUIFactory.swift in Sources */,
 				D427F9CC2121289F00F3C712 /* NumeronKeyboardViewController.swift in Sources */,
 				D440E13F212124F4002EDA55 /* Numeron.swift in Sources */,
 				D440E12F212122E6002EDA55 /* ViewController.swift in Sources */,
+				D4DEB89B2121DC4700A76BF9 /* KeyboardGUI.swift in Sources */,
 				D427F9D02121352900F3C712 /* testButton.swift in Sources */,
+				D4DEB8A12121EEB200A76BF9 /* TestDisplay.swift in Sources */,
 				D440E12D212122E6002EDA55 /* AppDelegate.swift in Sources */,
 				D440E14121212581002EDA55 /* NumeronError.swift in Sources */,
+				D4DEB89F2121ECEA00A76BF9 /* UIDesign.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

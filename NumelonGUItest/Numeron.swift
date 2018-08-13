@@ -27,6 +27,7 @@ public protocol AbstructDisplay: class {
 public protocol AbstructKeyboard: class {
     var kernel: NumeronKernel? { get set }
     func tapped(point: CGPoint)
+    func getView() -> UIView
 }
 
 public extension AbstructKeyboard {
@@ -36,8 +37,8 @@ public extension AbstructKeyboard {
 }
 
 public protocol NumeronFactory: class {
-    func makeDisplay(level: Level) -> AbstructDisplay
-    func makeKeyboard(level: Level) -> AbstructKeyboard
+    func makeDisplay(level: Level, frame: CGRect) -> AbstructDisplay
+    func makeKeyboard(level: Level, frame: CGRect) -> AbstructKeyboard
 }
 
 public final class NumeronKernel {
