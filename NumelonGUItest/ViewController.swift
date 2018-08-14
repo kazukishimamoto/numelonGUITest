@@ -12,11 +12,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let nk : NumeronKeyboardViewController = NumeronKeyboardViewController(frame: CGRect(x: 0, y: self.view.frame.height / 3 * 2, width: self.view.frame.width, height: self.view.frame.height / 3))
-        
-        let view = nk.getView()
-        self.view.addSubview(view)
+        // Do any additional setup after loading the view, typically from a nib.
+        let uiDesign = UIDesign(displayBounds: self.view.bounds)
+        let level = Level(digit: 3, digitRange: [Int](0...5), limit: 7, type: .DigitOnly)
+        let numeronFactory = GUINumeronFactory()
+        let keyboard = numeronFactory.makeKeyboard(level: level, frame: uiDesign.keyboardRect)
+        let display = numeronFactory.makeDisplay(level: level, frame: uiDesign.displayRect)
+        let numeron = NumeronKernel(level: level, display: display , keyboard: keyboard)
+        keyboard.kernel = numeron
+        display.kernel = numeron
+        self.view.addSubview(keyboard.getView())
+        self.view.addSubview(display.getView())
     }
 
     override func didReceiveMemoryWarning() {

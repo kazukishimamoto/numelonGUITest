@@ -12,6 +12,7 @@ import UIKit
 public struct Level {
     public let digit: Int
     public let digitRange: [Int]
+    public let limit: Int
     public let type: NumeronType
 }
 
@@ -21,6 +22,7 @@ public enum NumeronType {
 
 public protocol AbstractDisplay: class {
     var kernel: NumeronKernel? { get set }
+    init(frame: CGRect)
     func display(msg: String)
     func getView() -> UIView
 }
@@ -49,6 +51,7 @@ public final class NumeronKernel {
     public let level: Level
     private var answer = [String]()
     private var eat = 0, bite = 0
+    private var turn = 0
     private var hintMsg = ""
     internal var inputtedAns = [String]() {
         didSet {
@@ -65,10 +68,21 @@ public final class NumeronKernel {
                 }
             }
             hintMsg = ""
-            for a in inputtedAns{
-                hintMsg += a
+            if eat == level.digit {
+                hintMsg = Message.getClearMsg(answer: answer)
+            }else if turn >= level.limit {
+                var ans = ""
+                for a in answer {
+                    ans += a
+                }
+                hintMsg = Message.getFailedMsg(answer: answer)
+            }else {
+                for a in inputtedAns{
+                    hintMsg += a
+                }
+                hintMsg += Message.getHintMsg(inputtedAns: inputtedAns, eat: eat, bite: bite)
             }
-            hintMsg += " \(eat)EAT\(bite)BITE"
+            turn += 1
             display?.display(msg: hintMsg)
         }
     }
@@ -97,8 +111,6 @@ public final class NumeronKernel {
         self.display!.kernel = self
         self.keyboard!.kernel = self
     }
-    
-    
     
     deinit {
         display?.kernel = nil // unnecessary

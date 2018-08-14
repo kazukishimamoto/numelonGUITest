@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40E369A12122AFA90005347D /* UIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E369A02122AFA90005347D /* UIDesign.swift */; };
+		40E369A32122BA730005347D /* GUINumeronFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E369A22122BA730005347D /* GUINumeronFactory.swift */; };
+		40E369A52122BABC0005347D /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E369A42122BABC0005347D /* Keyboard.swift */; };
+		40E369A72122BAEC0005347D /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E369A62122BAEC0005347D /* Display.swift */; };
 		D427F9CC2121289F00F3C712 /* NumeronKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427F9CB2121289F00F3C712 /* NumeronKeyboardViewController.swift */; };
 		D427F9CE2121318100F3C712 /* testButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D427F9CD2121318100F3C712 /* testButton.xib */; };
 		D440E12D212122E6002EDA55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D440E12C212122E6002EDA55 /* AppDelegate.swift */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40E369A02122AFA90005347D /* UIDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDesign.swift; sourceTree = "<group>"; };
+		40E369A22122BA730005347D /* GUINumeronFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GUINumeronFactory.swift; sourceTree = "<group>"; };
+		40E369A42122BABC0005347D /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		40E369A62122BAEC0005347D /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
 		D427F9CB2121289F00F3C712 /* NumeronKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumeronKeyboardViewController.swift; sourceTree = "<group>"; };
 		D427F9CD2121318100F3C712 /* testButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testButton.xib; sourceTree = "<group>"; };
 		D440E129212122E6002EDA55 /* NumelonGUItest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumelonGUItest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40E3699F2122AF070005347D /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				40E369A22122BA730005347D /* GUINumeronFactory.swift */,
+				40E369A62122BAEC0005347D /* Display.swift */,
+				40E369A42122BABC0005347D /* Keyboard.swift */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
 		D440E120212122E6002EDA55 = {
 			isa = PBXGroup;
 			children = (
@@ -62,8 +80,10 @@
 		D440E12B212122E6002EDA55 /* NumelonGUItest */ = {
 			isa = PBXGroup;
 			children = (
+				40E3699F2122AF070005347D /* GUI */,
 				D440E12C212122E6002EDA55 /* AppDelegate.swift */,
 				D440E12E212122E6002EDA55 /* ViewController.swift */,
+				40E369A02122AFA90005347D /* UIDesign.swift */,
 				D440E13E212124F4002EDA55 /* Numeron.swift */,
 				D440E14021212580002EDA55 /* NumeronError.swift */,
 				D440E130212122E6002EDA55 /* Main.storyboard */,
@@ -150,9 +170,13 @@
 			files = (
 				D427F9CC2121289F00F3C712 /* NumeronKeyboardViewController.swift in Sources */,
 				D440E13F212124F4002EDA55 /* Numeron.swift in Sources */,
+				40E369A52122BABC0005347D /* Keyboard.swift in Sources */,
+				40E369A32122BA730005347D /* GUINumeronFactory.swift in Sources */,
+				40E369A72122BAEC0005347D /* Display.swift in Sources */,
 				D440E12F212122E6002EDA55 /* ViewController.swift in Sources */,
 				D440E12D212122E6002EDA55 /* AppDelegate.swift in Sources */,
 				D440E14121212581002EDA55 /* NumeronError.swift in Sources */,
+				40E369A12122AFA90005347D /* UIDesign.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
