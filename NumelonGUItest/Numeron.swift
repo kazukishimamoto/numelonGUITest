@@ -70,21 +70,20 @@ public final class NumeronKernel {
             hintMsg = ""
             if eat == level.digit {
                 hintMsg = Message.getClearMsg(answer: answer)
+                _isdone = true
             }else if turn >= level.limit {
-                var ans = ""
-                for a in answer {
-                    ans += a
-                }
                 hintMsg = Message.getFailedMsg(answer: answer)
+                _isdone = true
             }else {
-                for a in inputtedAns{
-                    hintMsg += a
-                }
                 hintMsg += Message.getHintMsg(inputtedAns: inputtedAns, eat: eat, bite: bite)
             }
             turn += 1
             display?.display(msg: hintMsg)
         }
+    }
+    private var _isdone = false
+    public var isDone: Bool {
+        return _isdone
     }
     
 

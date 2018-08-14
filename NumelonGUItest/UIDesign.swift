@@ -23,7 +23,11 @@ enum Message: String {
     case Failed = "GameOver"
     
     static func getHintMsg(inputtedAns: [String], eat: Int, bite: Int) -> String {
-        return "\(inputtedAns) \(eat)EAT\(bite)BITE"
+        var convertedMsg = ""
+        for str in inputtedAns {
+            convertedMsg += str
+        }
+        return "\(convertedMsg) \(eat)EAT\(bite)BITE"
     }
     static func getInfoByHintMsg(msg: String) -> (inputtedAns: [String], eat: Int, bite: Int)? {
         // change format into "ans,eat,bite"
