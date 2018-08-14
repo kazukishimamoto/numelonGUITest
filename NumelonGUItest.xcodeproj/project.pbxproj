@@ -11,6 +11,8 @@
 		40E369A32122BA730005347D /* GUINumeronFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E369A22122BA730005347D /* GUINumeronFactory.swift */; };
 		40E369A52122BABC0005347D /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E369A42122BABC0005347D /* Keyboard.swift */; };
 		40E369A72122BAEC0005347D /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E369A62122BAEC0005347D /* Display.swift */; };
+		D41655702122F50E0085E5F8 /* KeyboardButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D416556F2122F50E0085E5F8 /* KeyboardButton.xib */; };
+		D41655722122F5B30085E5F8 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41655712122F5B30085E5F8 /* KeyboardButton.swift */; };
 		D427F9CC2121289F00F3C712 /* NumeronKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427F9CB2121289F00F3C712 /* NumeronKeyboardViewController.swift */; };
 		D427F9CE2121318100F3C712 /* testButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D427F9CD2121318100F3C712 /* testButton.xib */; };
 		D440E12D212122E6002EDA55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D440E12C212122E6002EDA55 /* AppDelegate.swift */; };
@@ -27,6 +29,8 @@
 		40E369A22122BA730005347D /* GUINumeronFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GUINumeronFactory.swift; sourceTree = "<group>"; };
 		40E369A42122BABC0005347D /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		40E369A62122BAEC0005347D /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
+		D416556F2122F50E0085E5F8 /* KeyboardButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardButton.xib; sourceTree = "<group>"; };
+		D41655712122F5B30085E5F8 /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
 		D427F9CB2121289F00F3C712 /* NumeronKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumeronKeyboardViewController.swift; sourceTree = "<group>"; };
 		D427F9CD2121318100F3C712 /* testButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testButton.xib; sourceTree = "<group>"; };
 		D440E129212122E6002EDA55 /* NumelonGUItest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumelonGUItest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +61,8 @@
 				40E369A22122BA730005347D /* GUINumeronFactory.swift */,
 				40E369A62122BAEC0005347D /* Display.swift */,
 				40E369A42122BABC0005347D /* Keyboard.swift */,
+				D416556F2122F50E0085E5F8 /* KeyboardButton.xib */,
+				D41655712122F5B30085E5F8 /* KeyboardButton.swift */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -156,6 +162,7 @@
 			files = (
 				D440E137212122EA002EDA55 /* LaunchScreen.storyboard in Resources */,
 				D440E134212122EA002EDA55 /* Assets.xcassets in Resources */,
+				D41655702122F50E0085E5F8 /* KeyboardButton.xib in Resources */,
 				D440E132212122E6002EDA55 /* Main.storyboard in Resources */,
 				D427F9CE2121318100F3C712 /* testButton.xib in Resources */,
 			);
@@ -168,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D41655722122F5B30085E5F8 /* KeyboardButton.swift in Sources */,
 				D427F9CC2121289F00F3C712 /* NumeronKeyboardViewController.swift in Sources */,
 				D440E13F212124F4002EDA55 /* Numeron.swift in Sources */,
 				40E369A52122BABC0005347D /* Keyboard.swift in Sources */,
