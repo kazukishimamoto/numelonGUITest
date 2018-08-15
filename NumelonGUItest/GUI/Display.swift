@@ -21,6 +21,10 @@ class Display: AbstractDisplay {
         
     }
     
+    func clear(){
+        
+    }
+    
     func getView() -> UIView {
         return view
     }

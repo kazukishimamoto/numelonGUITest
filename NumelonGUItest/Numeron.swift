@@ -25,6 +25,7 @@ public protocol AbstractDisplay: class {
     init(frame: CGRect)
     func display(msg: String)
     func getView() -> UIView
+    func clear() // clear display
 }
 
 public protocol AbstractKeyboard: class {
