@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let uiDesign = UIDesign(displayBounds: self.view.bounds) // default design
-        let level = Level(digit: 2, digitRange: [Int](0...4), limit: 20, type: .DigitOnly)
+        let level = Level(digit: 2, digitRange: [Int](0...4), limit: 5, type: .DigitOnly)
         let numeronFactory = GUINumeronFactory()
         let display = numeronFactory.makeDisplay(level: level, frame: uiDesign.displayRect)
         let keyboard = numeronFactory.makeKeyboard(level: level, frame: uiDesign.keyboardRect)

@@ -47,12 +47,12 @@ public protocol NumeronFactory: class {
 }
 
 public final class NumeronKernel {
-    private weak var display: AbstractDisplay?
-    private weak var keyboard: AbstractKeyboard?
+    private var display: AbstractDisplay
+    private var keyboard: AbstractKeyboard
     public let level: Level
     private var answer = [String]()
     private var eat = 0, bite = 0
-    private var turn = 0
+    private var turn = 1
     private var hintMsg = ""
     internal var inputtedAns = [String]() {
         didSet {
@@ -79,7 +79,7 @@ public final class NumeronKernel {
                 hintMsg += Message.getHintMsg(inputtedAns: inputtedAns, eat: eat, bite: bite)
             }
             turn += 1
-            display?.display(msg: hintMsg)
+            display.display(msg: hintMsg)
         }
     }
     private var _isdone = false
@@ -108,8 +108,8 @@ public final class NumeronKernel {
         self.level = level
         self.display = display
         self.keyboard = keyboard
-        self.display!.kernel = self
-        self.keyboard!.kernel = self
+        self.display.kernel = self
+        self.keyboard.kernel = self
     }
     
     public func reset() {
@@ -128,12 +128,11 @@ public final class NumeronKernel {
                 answer.append(String(range[i]))
             }
         }
-        display!.clear()
+        display.clear()
     }
     
     deinit {
-        display?.kernel = nil // unnecessary
-        keyboard?.kernel = nil // unnecessary
+
     }
 }
 
