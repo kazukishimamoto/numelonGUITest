@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var numeron: NumeronKernel? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,9 +18,7 @@ class ViewController: UIViewController {
         let numeronFactory = GUINumeronFactory()
         let keyboard = numeronFactory.makeKeyboard(level: level, frame: uiDesign.keyboardRect)
         let display = numeronFactory.makeDisplay(level: level, frame: uiDesign.displayRect)
-        let numeron = NumeronKernel(level: level, display: display , keyboard: keyboard)
-        keyboard.kernel = numeron
-        display.kernel = numeron
+        numeron = NumeronKernel(level: level, display: display , keyboard: keyboard)
         self.view.addSubview(keyboard.getView())
         self.view.addSubview(display.getView())
     }
