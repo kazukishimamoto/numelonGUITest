@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class Keyboard: AbstractKeyboard {
+    weak var kernel: NumeronKernel?
     private var view: KeyboardView
-    var kernel: NumeronKernel?
     
     required init(frame: CGRect) {
         view = KeyboardView(frame: frame)
