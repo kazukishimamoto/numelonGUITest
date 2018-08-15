@@ -70,7 +70,7 @@ enum Message: String {
         for s in answer {
             appendMsg += s
         }
-        return Message.Failed.rawValue + "Answer: " + appendMsg
+        return Message.Failed.rawValue + " Answer: " + appendMsg
     }
 }
 
