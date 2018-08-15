@@ -88,7 +88,7 @@ public final class NumeronKernel {
     }
     
 
-    init(level: Level, display: AbstractDisplay, keyboard: AbstractKeyboard) {
+    public init(level: Level, display: AbstractDisplay, keyboard: AbstractKeyboard) {
         // init answer
         let count = 1_000_000 // shuffle counts
         switch level.type {
@@ -110,6 +110,25 @@ public final class NumeronKernel {
         self.keyboard = keyboard
         self.display!.kernel = self
         self.keyboard!.kernel = self
+    }
+    
+    public func reset() {
+        // reset answer
+        let count = 1_000_000 // shuffle counts
+        switch level.type {
+        case .DigitOnly:
+            // shuffle
+            var range = level.digitRange
+            for _ in 0 ..< count {
+                let from = Int(arc4random())%range.count
+                let to = Int(arc4random())%range.count
+                range.swapAt(from, to)
+            }
+            for i in 0 ..< level.digit {
+                answer.append(String(range[i]))
+            }
+        }
+        display!.clear()
     }
     
     deinit {
