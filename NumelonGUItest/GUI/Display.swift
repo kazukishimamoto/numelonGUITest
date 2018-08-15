@@ -13,7 +13,6 @@ class Display: AbstractDisplay {
     weak var kernel: NumeronKernel? {
         didSet {
             if kernel == nil { return }
-            print("\(kernel!.level.digit)")
             panelWidth = 2
             panelHeight = Int(ceil(Double((kernel!.level.limit))/Double(panelWidth)))
             // create labels
@@ -28,7 +27,7 @@ class Display: AbstractDisplay {
                 panels.append(label)
                 view.addSubview(label)
             }
-            // init layout
+            // init autolayout
             for i in 0 ..< panelWidth {
                 let leadingAnchor = (i == 0 ? view.leadingAnchor : panels[geti(0, i-1)].trailingAnchor)
                 panels[geti(0, i)].leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
