@@ -15,8 +15,6 @@
             <rect key="frame" x="0.0" y="0.0" width="145" height="149"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <fontDescription key="fontDescription" type="system" pointSize="72"/>
-            <state key="normal" title="1"/>
             <point key="canvasLocation" x="-63" y="20"/>
         </button>
     </objects>

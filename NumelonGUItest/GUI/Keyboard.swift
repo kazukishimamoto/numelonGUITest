@@ -17,12 +17,26 @@ class Keyboard: AbstractKeyboard {
         view = KeyboardView(frame: frame)
         view.backgroundColor = .red
         
+        var button:[[UIButton]] = [[]]
+        
+        let buttonWidth: Double = Double(self.view.frame.size.width / 3)
+        let buttonHeight: Double = Double(self.view.frame.size.height / 4)
+        
         // キーボードボタンの配置
-        let button = KeyboardButton(frame: CGRect(x: 0.0, y: 0.0, width: 100, height: 100))
-        self.view.addSubview(button)
+        for i in 0..<4 {
+            button.append([])
+            for j in 0..<3{
+                button[i].append(KeyboardButton(frame:
+                    CGRect(x: Double(j) * buttonWidth, y: Double(i) * buttonHeight,
+                           width: buttonWidth, height: buttonHeight)))
+                button[i][j].setTitle("\(i * j)", for: .normal)
+                self.view.addSubview(button[i][j])
+            }
+        }
     }
     
     func getView() -> UIView {
+        print("赤いviewの高さ:\(self.view.frame.size.height)")
         return view
     }
 }

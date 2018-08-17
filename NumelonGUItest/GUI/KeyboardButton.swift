@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KeyboardButton: UIView {
+class KeyboardButton: UIButton{
     //コードから生成したときに通る初期化処理
     override init(frame: CGRect) {
         super.init(frame: frame)
