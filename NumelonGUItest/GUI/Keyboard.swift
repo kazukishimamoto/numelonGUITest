@@ -29,14 +29,23 @@ class Keyboard: AbstractKeyboard {
                 button[i].append(KeyboardButton(frame:
                     CGRect(x: Double(j) * buttonWidth, y: Double(i) * buttonHeight,
                            width: buttonWidth, height: buttonHeight)))
-                button[i][j].setTitle("\(i * j)", for: .normal)
+                var buttonText = String((i * 3) + (j + 1))
+                if buttonText == "10"{
+                    buttonText = "Del"
+                }else if buttonText == "11"{
+                    buttonText = "0"
+                }else if buttonText == "12"{
+                    buttonText = "Ent"
+                }
+                button[i][j].setTitle(buttonText, for: .normal)
+                button[i][j].titleLabel?.font = UIFont.systemFont(ofSize: 25)
+                button[i][j].setTitle("Tapped!", for: .highlighted)
                 self.view.addSubview(button[i][j])
             }
         }
     }
     
     func getView() -> UIView {
-        print("赤いviewの高さ:\(self.view.frame.size.height)")
         return view
     }
 }

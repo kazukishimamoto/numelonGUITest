@@ -20,6 +20,9 @@ class KeyboardButton: UIButton{
         super.init(coder: aDecoder)
         self.commonInit()
     }
+    @IBAction func buttonAction(_ sender: Any) {
+        print(self.currentTitle!)
+    }
     
     fileprivate func commonInit() {
         //MyCustomView.xibファイルからViewを生成する。
