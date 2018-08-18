@@ -34,10 +34,24 @@ public struct Level {
     }
 }
 
+public struct MessageCommand {
+    public let inputtedAns: [String]
+    public let eat, bite: Int
+    public let answer: [String]
+    public let command: NumeronCommand
+    public let defaultMsg: String
+}
+
+public enum NumeronCommand {
+    case Hint
+    case Failure
+    case Clear
+}
+
 public protocol AbstractDisplay: class {
     var kernel: NumeronKernel? { get set }
     init(frame: CGRect)
-    func display(msg: String)
+    func display(command: MessageCommand)
     func getView() -> UIView
     func clear() // clear display
 }
@@ -60,13 +74,29 @@ public protocol NumeronFactory: class {
 }
 
 public final class NumeronKernel {
+    private struct DefaultMsg {
+        static let clear = "Clear"
+        static let failure = {(answer: [String]) -> String in
+            var ans = ""
+            for a in answer {
+                ans += a
+            }
+            return "Game Over. ans: \(ans)"
+        }
+        static let hint = {(inputtedAns: [String], eat: Int, bite: Int) -> String in
+            var inptAns = ""
+            for a in inputtedAns {
+                inptAns += a
+            }
+            return "\(inptAns) \(eat)EAT\(bite)BITE"
+        }
+    }
     private var display: AbstractDisplay
     private var keyboard: AbstractKeyboard
     public let level: Level
     private var answer = [String]()
     private var eat = 0, bite = 0
     private var turn = 1
-    private var hintMsg = ""
     internal var inputtedAns = [String]() {
         didSet {
             eat = 0
@@ -81,18 +111,18 @@ public final class NumeronKernel {
                     bite += 1
                 }
             }
-            hintMsg = ""
+            var cmdForDisplay: MessageCommand
             if eat == level.digit {
-                hintMsg = Message.getClearMsg(answer: answer)
+                cmdForDisplay = MessageCommand(inputtedAns: inputtedAns, eat: eat, bite: bite, answer: answer, command: .Clear, defaultMsg: DefaultMsg.clear)
                 _isdone = true
             }else if turn >= level.limit {
-                hintMsg = Message.getFailedMsg(answer: answer)
+                cmdForDisplay = MessageCommand(inputtedAns: inputtedAns, eat: eat, bite: bite, answer: answer, command: .Failure, defaultMsg: DefaultMsg.failure(answer))
                 _isdone = true
             }else {
-                hintMsg += Message.getHintMsg(inputtedAns: inputtedAns, eat: eat, bite: bite)
+                cmdForDisplay = MessageCommand(inputtedAns: inputtedAns, eat: eat, bite: bite, answer: answer, command: .Hint, defaultMsg: DefaultMsg.hint(inputtedAns, eat, bite))
             }
             turn += 1
-            display.display(msg: hintMsg)
+            display.display(command: cmdForDisplay)
         }
     }
     private var _isdone = false
@@ -133,8 +163,6 @@ public final class NumeronKernel {
 
     }
 }
-
-
 
 
 
