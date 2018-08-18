@@ -11,6 +11,7 @@
 		40E369A32122BA730005347D /* GUINumeronFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E369A22122BA730005347D /* GUINumeronFactory.swift */; };
 		40E369A52122BABC0005347D /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E369A42122BABC0005347D /* Keyboard.swift */; };
 		40E369A72122BAEC0005347D /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E369A62122BAEC0005347D /* Display.swift */; };
+		40F9A5F92127EA2400008170 /* NumeronViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F9A5F82127EA2400008170 /* NumeronViewController.swift */; };
 		D427F9CE2121318100F3C712 /* testButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D427F9CD2121318100F3C712 /* testButton.xib */; };
 		D440E12D212122E6002EDA55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D440E12C212122E6002EDA55 /* AppDelegate.swift */; };
 		D440E12F212122E6002EDA55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D440E12E212122E6002EDA55 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 		40E369A22122BA730005347D /* GUINumeronFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GUINumeronFactory.swift; sourceTree = "<group>"; };
 		40E369A42122BABC0005347D /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		40E369A62122BAEC0005347D /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
+		40F9A5F82127EA2400008170 /* NumeronViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumeronViewController.swift; sourceTree = "<group>"; };
 		D427F9CD2121318100F3C712 /* testButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testButton.xib; sourceTree = "<group>"; };
 		D440E129212122E6002EDA55 /* NumelonGUItest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumelonGUItest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D440E12C212122E6002EDA55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				40E3699F2122AF070005347D /* GUI */,
 				D440E12C212122E6002EDA55 /* AppDelegate.swift */,
 				D440E12E212122E6002EDA55 /* ViewController.swift */,
+				40F9A5F82127EA2400008170 /* NumeronViewController.swift */,
 				40E369A02122AFA90005347D /* UIDesign.swift */,
 				D440E13E212124F4002EDA55 /* Numeron.swift */,
 				D440E14021212580002EDA55 /* NumeronError.swift */,
@@ -172,6 +175,7 @@
 				D440E12F212122E6002EDA55 /* ViewController.swift in Sources */,
 				D440E12D212122E6002EDA55 /* AppDelegate.swift in Sources */,
 				D440E14121212581002EDA55 /* NumeronError.swift in Sources */,
+				40F9A5F92127EA2400008170 /* NumeronViewController.swift in Sources */,
 				40E369A12122AFA90005347D /* UIDesign.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
