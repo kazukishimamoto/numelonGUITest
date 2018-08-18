@@ -55,5 +55,4 @@ class Keyboard: AbstractKeyboard {
 }
 
 private class KeyboardView: UIView {
-
 }
