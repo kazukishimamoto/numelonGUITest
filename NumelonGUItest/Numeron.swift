@@ -11,13 +11,27 @@ import UIKit
 
 public struct Level {
     public let digit: Int
-    public let digitRange: [Int]
+    public let charactors: [String]
     public let limit: Int
-    public let type: NumeronType
-}
-
-public enum NumeronType {
-    case DigitOnly
+    init(digit: Int, charactors: [String], limit: Int) {
+        self.digit = digit
+        self.charactors = charactors
+        self.limit = limit
+    }
+    init(digit: Int, charactors: [Int], limit: Int) {
+        var chr = [String]()
+        for c in charactors {
+            chr.append(String(c))
+        }
+        self.init(digit: digit, charactors: chr, limit: limit)
+    }
+    init(digit: Int, charactors: String, limit: Int) {
+        var chr = [String]()
+        for c in charactors {
+            chr.append(String(c))
+        }
+        self.init(digit: digit, charactors: chr, limit: limit)
+    }
 }
 
 public protocol AbstractDisplay: class {
@@ -32,7 +46,6 @@ public protocol AbstractKeyboard: class {
     var kernel: NumeronKernel? { get set }
     init(frame: CGRect)
     func getView() -> UIView
-    // func tapped(point: CGPoint)
 }
 
 public extension AbstractKeyboard {
@@ -89,46 +102,31 @@ public final class NumeronKernel {
     
 
     public init(level: Level, display: AbstractDisplay, keyboard: AbstractKeyboard) {
-        // init answer
-        let count = 1_000_000 // shuffle counts
-        switch level.type {
-        case .DigitOnly:
-            // shuffle
-            var range = level.digitRange
-            for _ in 0 ..< count {
-                let from = Int(arc4random())%range.count
-                let to = Int(arc4random())%range.count
-                range.swapAt(from, to)
-            }
-            for i in 0 ..< level.digit {
-                answer.append(String(range[i]))
-            }
-        }
-
         self.level = level
         self.display = display
         self.keyboard = keyboard
         self.display.kernel = self
         self.keyboard.kernel = self
+        self.initAnswer()
     }
     
     public func reset() {
-        // reset answer
-        let count = 1_000_000 // shuffle counts
-        switch level.type {
-        case .DigitOnly:
-            // shuffle
-            var range = level.digitRange
-            for _ in 0 ..< count {
-                let from = Int(arc4random())%range.count
-                let to = Int(arc4random())%range.count
-                range.swapAt(from, to)
-            }
-            for i in 0 ..< level.digit {
-                answer.append(String(range[i]))
-            }
-        }
+        initAnswer()
         display.clear()
+    }
+    
+    func initAnswer() {
+        answer = [String]()
+        let count = 1_000_000 // shuffle counts
+        var charactors = level.charactors
+        for _ in 0 ..< count {
+            let from = Int(arc4random())%charactors.count
+            let to = Int(arc4random())%charactors.count
+            charactors.swapAt(from, to)
+        }
+        for i in 0 ..< level.digit {
+            answer.append(charactors[i])
+        }
     }
     
     deinit {
