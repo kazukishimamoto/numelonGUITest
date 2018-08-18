@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-class GUINumeronFactory: NumeronFactory {
+class GUISimpleNumeronFactory: NumeronFactory {
     func makeDisplay(level: Level, frame: CGRect) -> AbstractDisplay {
-        return Display(frame: frame)
+        return SimpleDisplay(frame: frame)
     }
     
     func makeKeyboard(level: Level, frame: CGRect) -> AbstractKeyboard {
-        return Keyboard(frame: frame)
+        return SimpleKeyboard(frame: frame)
     }
     
     

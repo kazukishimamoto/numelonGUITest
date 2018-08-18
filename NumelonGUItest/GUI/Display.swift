@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Display: AbstractDisplay {
+class SimpleDisplay: AbstractDisplay {
     weak var kernel: NumeronKernel? {
         didSet {
             if kernel == nil { return }
@@ -75,6 +75,7 @@ class Display: AbstractDisplay {
     }
     
     func getView() -> UIView {
+        assert(kernel != nil)
         return view
     }
     

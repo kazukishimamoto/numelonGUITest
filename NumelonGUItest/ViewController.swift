@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
-        level = Level(digit: 2, charactors: [Int](0...4), limit: 5)
+        var chr = ["0", "9", "a", "b", "c"]
+        level = Level(digit: 3, charactors: [Int](0...8), limit: 7)
         
         let button = UIButton(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
         button.setTitle("button", for: .normal)

@@ -17,7 +17,7 @@ class NumeronViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let uiDesign = UIDesign(displayBounds: self.view.bounds) // default design
-        let numeronFactory = GUINumeronFactory()
+        let numeronFactory = GUISimpleNumeronFactory()
         let display = numeronFactory.makeDisplay(level: level, frame: uiDesign.displayRect)
         let keyboard = numeronFactory.makeKeyboard(level: level, frame: uiDesign.keyboardRect)
         numeron = NumeronKernel(level: level, display: display , keyboard: keyboard)
