@@ -23,6 +23,8 @@ class Display: AbstractDisplay {
                 label.text = ""
                 label.numberOfLines = 1
                 label.textColor = .black
+                label.layer.borderColor = UIColor.blue.cgColor
+                label.layer.borderWidth = 2.0
                 label.translatesAutoresizingMaskIntoConstraints = false
                 panels.append(label)
                 view.addSubview(label)
