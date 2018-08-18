@@ -18,18 +18,22 @@ class Keyboard: AbstractKeyboard {
         view.backgroundColor = .red
         
         var button:[[UIButton]] = [[]]
-        
         let buttonWidth: Double = Double(self.view.frame.size.width / 3)
-        let buttonHeight: Double = Double(self.view.frame.size.height / 4)
+        let buttonHeight: Double = Double(self.view.frame.size.height / 5)
+        
+        let displayWidth: Double = Double(self.view.frame.size.width)
+        let displayHeight: Double = Double(self.view.frame.size.height / 5)
+        var display = KeyboardDisplay(frame: CGRect(x: 0.0, y: 0.0, width: displayWidth, height: displayHeight))
+        self.view.addSubview(display)
         
         // キーボードボタンの配置
-        for i in 0..<4 {
+        for i in 1..<5 {
             button.append([])
             for j in 0..<3{
                 button[i].append(KeyboardButton(frame:
                     CGRect(x: Double(j) * buttonWidth, y: Double(i) * buttonHeight,
                            width: buttonWidth, height: buttonHeight)))
-                var buttonText = String((i * 3) + (j + 1))
+                var buttonText = String(((i - 1) * 3) + (j + 1))
                 if buttonText == "10"{
                     buttonText = "Del"
                 }else if buttonText == "11"{
